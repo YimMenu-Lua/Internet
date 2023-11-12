@@ -2,14 +2,14 @@ local function StartScript(string, stack_size)
     if not SCRIPT.DOES_SCRIPT_EXIST(string) then
         return false
     end
-    if SCRIPT_GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(str)) > 0 then
+    if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(str)) > 0 then
         return true
     end
     SCRIPT.REQUEST_SCRIPT(string)
     while not SCRIPT.HAS_SCRIPT_LOADED (string) do
         script_util:yield()
     end
-    SYSTEM.START_NEW_SCRIPT(str, arg_count or 0)
+    SYSTEM.START_NEW_SCRIPT(string, arg_count or 0)
     SCRIPT.SET_SCRIPT_AS_NO_LONGER_NEEDED(string)
     return true
 end
