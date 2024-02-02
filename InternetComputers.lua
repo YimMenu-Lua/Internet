@@ -119,3 +119,12 @@ internet_computers:add_button("Start Master Control Terminal", function()
         start_script('appArcadeBusinessHub', 1424, script)
     end)
 end)
+internet_computers:add_sameline()
+internet_computers:add_button("Fill Drug Supplies", function()
+    script.run_in_fiber(function (script)
+        for i = 1, 7 do
+            globals.set_int(1662873 + i, 1)
+            script:yield()
+        end
+    end)
+end)
