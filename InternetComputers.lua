@@ -1,5 +1,5 @@
-has_bought_something = 1942637
-global_computer_type = 1962105
+has_bought_something = 1943376
+global_computer_type = 1963007
 
 function start_script(script_name, stack_size, script)
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(script_name)) >= 1 then
