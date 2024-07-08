@@ -1,5 +1,6 @@
-has_bought_something = 1943376
-global_computer_type = 1963007
+local has_bought_something = 1943376
+local global_computer_type = 1963007
+local drugs_global = 1663174
 
 function start_script(script_name, stack_size, script)
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(script_name)) >= 1 then
@@ -123,7 +124,7 @@ internet_computers:add_sameline()
 internet_computers:add_button("Fill Drug Supplies", function()
     script.run_in_fiber(function (script)
         for i = 1, 7 do
-            globals.set_int(1662873 + i, 1)
+            globals.set_int(drugs_global + i, 1)
             script:yield()
         end
     end)
